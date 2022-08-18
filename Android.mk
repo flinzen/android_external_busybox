@@ -159,7 +159,7 @@ BUSY_TOOLS := \
 	blkid
 
 # Install the symlinks.
-LOCAL_POST_INSTALL_CMD := $(hide) $(foreach t,$(BUSY_TOOLS),ln -sf busybox $(TARGET_OUT)/bin/$(t);)
+LOCAL_POST_INSTALL_CMD := $(hide) $(foreach t,$(BUSY_TOOLS),ln -sf /system/xbin/busybox $(TARGET_OUT)/bin/$(t);)
 include $(BUILD_EXECUTABLE)
 
 ifeq ($(WITH_BUSYBOX_LINKS),true)
